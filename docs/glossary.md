@@ -539,6 +539,300 @@
     - Schema mapping
     - Data validation
 
+## As Code
+
+### Documentation as Code
+- Definition
+  - Practice of treating documentation like source code
+  - Documentation stored alongside code in version control
+  - Uses same tools and workflows as development
+  - Related to: DevOps, Continuous Integration
+
+- Core Principles
+  - Version Control
+    - Documentation in git repositories
+    - Branch strategies
+    - Pull request reviews
+    - History tracking
+  
+  - Automation
+    - Automated builds
+    - Validation checks
+    - Publication pipelines
+    - Link checking
+  
+  - Formats
+    - Markdown: Human-readable text format
+    - AsciiDoc: Rich text documentation
+    - reStructuredText: Python documentation standard
+    - OpenAPI: API documentation
+    - PlantUML/Mermaid: Diagrams as code
+
+- Testing & Validation
+  - Link validation
+  - Syntax checking
+  - Style guide compliance
+  - Code snippet testing
+  - API documentation testing
+  - Related to: Continuous Integration, Quality Assurance
+
+- Integration Patterns
+  - Code Comments to Docs
+  - API Specs to Documentation
+  - Architecture Diagrams as Code
+  - Test Cases as Documentation
+  - ADRs in Version Control
+  - Related to: DevOps Pipeline, CI/CD
+
+- Documentation Platforms
+  - Static Site Generators
+    - Jekyll, Hugo, MkDocs
+    - Build from source formats
+    - Theme customization
+  - Documentation Hosting
+    - GitHub Pages
+    - ReadTheDocs
+    - Documentation Portals
+  - Related to: Content Management, Web Hosting
+
+### Policy as Code
+- Definition
+  - Practice of expressing policies in machine-readable format
+  - Automated enforcement of rules and standards
+  - Version-controlled policy definitions
+  - Related to: Infrastructure as Code, Security as Code
+
+- Implementation Patterns
+  - Policy Languages
+    - Rego (OPA): Policy language for Cloud Native
+    - HCL (Sentinel): HashiCorp policy framework
+    - IAM Policies: Access control definitions
+    - YAML/JSON: Configuration-based policies
+  - Related to: Access Control, Compliance
+
+- Common Use Cases
+  - Security Policies
+    - Access control rules
+    - Network security policies
+    - Data protection requirements
+    - Compliance checks
+  
+  - Infrastructure Policies
+    - Resource configuration rules
+    - Deployment constraints
+    - Cost management policies
+    - Performance requirements
+
+  - Development Policies
+    - Code quality rules
+    - Architecture compliance
+    - Dependency management
+    - Build and deployment rules
+
+- Policy Enforcement Points
+  - Pre-deployment
+    - Infrastructure planning
+    - Code review
+    - Build pipeline
+  
+  - Runtime
+    - Request authorization
+    - Resource access
+    - Configuration changes
+  
+  - Post-deployment
+    - Compliance monitoring
+    - Audit logging
+    - Policy violation detection
+
+- Policy Testing
+  - Unit Testing
+    - Individual rule validation
+    - Edge case coverage
+    - Policy composition
+  
+  - Integration Testing
+    - Policy enforcement validation
+    - System interaction testing
+    - Performance impact
+
+- Policy Management
+  - Version Control
+    - Policy history
+    - Change tracking
+    - Review process
+  
+  - Distribution
+    - Policy deployment
+    - Updates and rollback
+    - Environment management
+  
+  - Monitoring
+    - Enforcement tracking
+    - Violation detection
+    - Effectiveness metrics
+
+### Infrastructure as Code (IaC)
+
+- Definition
+  - Practice of managing infrastructure using code and automation
+  - Version-controlled infrastructure definitions
+  - Automated provisioning and configuration
+  - Related to: DevOps, GitOps, Continuous Deployment
+
+- Core Concepts
+  - Declarative IaC
+    - Describes desired end state
+    - System determines required changes
+    - Examples: Terraform, CloudFormation
+    - Idempotent operations
+  
+  - Imperative IaC
+    - Defines specific steps
+    - Script-based approach
+    - Examples: Ansible, Shell scripts
+    - Procedural execution
+
+- Implementation Patterns
+  - Provisioning
+    - Resource creation/deletion
+    - Infrastructure lifecycle
+    - State management
+    - Dependencies handling
+  
+  - Configuration Management
+    - Software installation
+    - System settings
+    - Service configuration
+    - State enforcement
+  
+  - Orchestration
+    - Coordination of services
+    - Deployment sequencing
+    - Service discovery
+    - Load balancing
+
+- Best Practices
+  - Immutable Infrastructure
+    - No in-place updates
+    - Complete redeployment
+    - Version tracking
+    - Rollback support
+  
+  - Infrastructure Testing
+    - Unit tests
+    - Integration tests
+    - Compliance checks
+    - Security scanning
+  
+  - State Management
+    - State file handling
+    - Remote state storage
+    - State locking
+    - Backup strategies
+
+- Common Tools
+  - Provisioning Tools
+    - Terraform: Multi-cloud provisioning
+    - CloudFormation: AWS native
+    - ARM Templates: Azure native
+    - Pulumi: Programming languages for IaC
+  
+  - Configuration Management
+    - Ansible: Agentless configuration
+    - Chef: Ruby-based configuration
+    - Puppet: Declarative configuration
+    - Salt: Event-driven orchestration
+
+- Security & Compliance
+  - Secret Management
+    - Credential handling
+    - Key rotation
+    - Access control
+  
+  - Compliance
+    - Policy enforcement
+    - Audit trails
+    - Regulatory requirements
+    - Security baselines
+
+### GitOps
+- Definition
+  - Operational practice using Git as single source of truth
+  - Declarative infrastructure and application configuration
+  - Pull-based deployment model
+  - Related to: DevOps, Infrastructure as Code, CI/CD
+
+- Core Principles
+  - Declarative System
+    - Entire system described declaratively
+    - Version controlled configurations
+    - Desired state specification
+    - Self-documenting systems
+  
+  - Immutability
+    - Immutable infrastructure
+    - Version-controlled changes
+    - No direct environment modifications
+    - Reproducible deployments
+
+  - Pull vs Push
+    - Pull-based deployment model
+    - Operators watching for changes
+    - Automatic drift detection
+    - Self-healing systems
+
+- Implementation Patterns
+  - Repository Structure
+    - Application code
+    - Infrastructure definitions
+    - Environment configurations
+    - Deployment manifests
+  
+  - Deployment Operators
+    - Kubernetes operators
+    - Configuration watchers
+    - State reconciliation
+    - Automated rollback
+
+  - Environment Management
+    - Multi-environment support
+    - Promotion workflows
+    - Configuration inheritance
+    - Environment-specific overrides
+
+- GitOps Workflows
+  - Change Management
+    - Pull requests for changes
+    - Code review process
+    - Automated validation
+    - Change approval flows
+  
+  - Continuous Deployment
+    - Automated deployments
+    - Progressive delivery
+    - Canary deployments
+    - Blue-green deployments
+
+  - Drift Detection
+    - State monitoring
+    - Automated reconciliation
+    - Drift alerts
+    - Recovery procedures
+
+- Common Tools
+  - Kubernetes-native
+    - Flux CD: Progressive delivery
+    - ArgoCD: Declarative GitOps
+    - Jenkins X: Cloud-native CI/CD
+    - Tekton: Cloud-native pipelines
+  
+  - Supporting Tools
+    - Helm: Package management
+    - Kustomize: Configuration customization
+    - Sealed Secrets: Secret management
+    - Prometheus: Monitoring
+
 ## Organizational Anti-patterns
 
 - Project Blindness
