@@ -1,6 +1,191 @@
 # ADR Glossary
 
+## Architectural Decision Records (ADR) Concepts
+
+- Architecture Decision Record (ADR)
+  - A documented record of a significant architectural decision.
+  - Related to: Decision Log, Design Documentation
+
+- Architecture Decision Log (ADL)
+  - A collection of all ADRs for a project.
+  - Also known as: Decision History, Architecture Changelog
+
+- Decision Story
+  - Narrative describing the context and reasoning behind an architectural decision
+  - Related to: Context, Rationale
+
 ## Architectural Patterns & Concepts
+
+- Event Sourcing
+  - Pattern where state changes are stored as a sequence of events
+  - Also known as: Event Store Pattern
+  - Related to: CQRS, Event-Driven Architecture
+
+- Long-Lived Transactions (LLT)
+  - Transactions that span multiple system boundaries or time periods
+  - Also known as: Saga Pattern, Choreography-based Transactions
+  - Related to: Compensating Transactions, Distributed Transactions
+
+- CQRS (Command Query Responsibility Segregation)
+  - Pattern separating read and write operations
+  - Related to: Event Sourcing, Domain-Driven Design
+
+- Service Mesh
+  - Infrastructure layer for service-to-service communication
+  - Also known as: Network Fabric
+  - Related to: Service Discovery, Load Balancing
+
+- Microservices
+  - Architectural style structuring an application as a collection of loosely coupled services
+  - Related to: Service-Oriented Architecture, Distributed Systems
+
+- Domain-Driven Design (DDD)
+  - Approach to software development focusing on the core domain
+  - Related to: Bounded Contexts, Ubiquitous Language
+
+- Bounded context
+  - Basically the ability to group something and use that to abstract other factors out
+  - Related to: Domain-Driven Design
+
+## Domain Modeling Concepts
+
+- Bounded Context
+  - A specific responsibility with explicit boundaries that represents a specialized domain model
+  - Also known as: Context Boundary, Domain Boundary
+  - Key concepts:
+    - Shared Kernel:
+    - Model shared between two bounded contexts
+    - Context Map: Document showing relationships between bounded contexts
+    - Anti-corruption Layer: Interface layer protecting one bounded context from another
+    - Upstream/Downstream: Relationship pattern between bounded contexts
+  - Related to: Domain-Driven Design, Microservices
+
+- Context Mapping
+  - Practice of documenting relationships between bounded contexts
+  - Types:
+   - Partnership: Teams agree to coordinate changes
+   - Customer/Supplier: Upstream/downstream relationship
+   - Conformist: Downstream team uses upstream model
+   - Anti-corruption Layer: Downstream team translates upstream model
+   - Open Host Service: Upstream provides protocol for integration
+   - Published Language: Formal schema for context communication
+  - Related to: System Integration, Domain-Driven Design
+
+- Ubiquitous Language
+  - Common, rigorous language within a bounded context
+  - Characteristics:
+   - Shared by all team members (technical and domain experts)
+   - Precise within the bounded context
+   - May have different meanings in other contexts
+  - Related to: Domain-Driven Design, Requirements Engineering
+
+## System Quality Attributes
+
+- Scalability
+  - System's ability to handle growing amounts of work
+  - Types: Vertical (Scale Up), Horizontal (Scale Out)
+
+- Reliability
+  - System's ability to perform specified functions under stated conditions
+  - Related to: Availability, Fault Tolerance
+
+- Maintainability
+  - Ease with which a system can be modified to correct faults, improve performance
+  - Related to: Technical Debt, Code Quality
+
+- Performance
+  - System's response time, throughput, and resource usage characteristics
+  - Related to: Latency, Throughput, Efficiency
+
+## Development Concepts
+
+- Technical Debt
+  - Implied cost of additional rework caused by choosing an easy solution now
+  - Types: Deliberate, Accidental
+  - Related to: Refactoring, Code Quality
+
+- Coupling
+  - Degree of interdependence between software modules
+  - Types: Tight, Loose
+  - Related to: Cohesion, Modularity
+
+- Cohesion
+  - Degree to which elements of a module belong together
+  - Types: High, Low
+  - Related to: Coupling, Single Responsibility Principle
+
+## Version Control & Release Management
+
+- Breaking Change
+  - A change that breaks backward compatibility
+  - Also known as: Major Version Change
+  - Related to: Semver, Migration Path
+
+- Semver (Semantic Versioning)
+  - Version numbering scheme: MAJOR.MINOR.PATCH
+  - Example: 1.3.1
+  - Related to: Release Management, Compatibility
+
+- Feature Toggle/Flag
+  - Technique to enable/disable functionality without code changes
+  - Also known as: Feature Switch, Feature Flip
+  - Related to: Continuous Delivery, A/B Testing
+
+## Cloud & Infrastructure
+
+- Infrastructure as Code (IaC)
+  - Managing infrastructure through code rather than manual processes
+  - Related to: Configuration Management, DevOps
+
+- Container Orchestration
+  - Automating deployment, scaling, and management of containerized applications
+  - Examples: Kubernetes, Docker Swarm(well not really, but it looks stupid with only one example)
+  - Related to: Microservices, Cloud Native
+
+- Cloud Native
+  - Applications designed specifically for cloud computing
+  - Related to: Containers, Microservices, DevOps
+
+## Security & Compliance
+
+- Zero Trust
+  - Security concept requiring verification for all users and devices, basically what measure syou would put in place for a system on the internet
+  - Related to: Security Architecture, Authentication
+
+- Defense in Depth
+  - Layered security strategy
+  - Also known as: Layered Security
+  - Related to: Security Architecture, Risk Management
+
+- IEC/ISO27001
+  - Most commonly used security standard for organisational compliance  
+
+- Privacy By Design
+  - An open-ended collection of measures you will adopt in relation to handling data with the purpose of securing integrity, semantic understanding and other factors with the purpose of respecting users rights.
+  - Related to: Security Architecture, GDPR, AI Act 
+
+## Integration Patterns
+
+- API Gateway
+  - Server that acts as an API front-end
+  - Related to: Microservices, Service Mesh
+
+- Message Queue
+  - Asynchronous communication mechanism
+  - Related to: Event-Driven Architecture, Pub/Sub
+
+## Testing & Quality
+
+- Test-Driven Development (TDD)
+  - Development process relying on very short development cycles
+  - Related to: Unit Testing, Continuous Integration
+
+- Continuous Integration/Continuous Deployment (CI/CD)
+  - Practices of automating building, testing, and deployment
+  - Related to: DevOps, Automation
+
+## Architectural Patterns & Concepts
+
 - Event Sourcing
   - Also known as: Event Store Pattern
   - Related to: CQRS, Event-Driven Architecture
@@ -15,11 +200,422 @@
 - Service Mesh
   - Also known as: Network Fabric
   - Related to: Service Discovery, Load Balancing
+ 
+### Object-Oriented Analysis and Design (OOAD)
+
+- Object-Oriented Analysis (OOA)
+  - Process of analyzing a problem domain from object-oriented perspective
+  - Key concepts:
+    - Objects: Instances of a class representing real-world entities
+    - Classes: Templates defining object structure and behavior
+    - Inheritance: Mechanism for code reuse and specialization
+    - Polymorphism: Ability to present same interface for different implementations
+    - Related to: Requirements Engineering, Domain Modeling
+
+- Object-Oriented Design (OOD)
+  - Process of designing software system using object-oriented principles
+  - Key concepts:
+    - Abstraction: Hiding implementation details
+    - Encapsulation: Bundling data and methods that operate on that data
+    - Association: Relationships between objects
+    - Composition: Strong ownership relationship between objects
+    - Aggregation: Weak ownership relationship between objects
+    - Related to: Software Architecture, Design Patterns
+
+- Design Patterns
+  - Reusable solutions to common design problems
+  - Categories:
+    - Creational: Object creation mechanisms
+    - Structural: Object composition and relationships
+    - Behavioral: Object communication and responsibility
+    - Related to: Gang of Four Patterns, Enterprise Patterns
+
+- SOLID Principles
+  - Single Responsibility Principle (SRP)
+    - A class should have only one reason to change
+      - Key aspects:
+      - Focused functionality
+      - High cohesion
+      - Clear boundaries of responsibility
+      - Related to: Separation of Concerns, Maintainability
+
+  - Open/Closed Principle (OCP)
+    - Software entities should be open for extension but closed for modification
+    - Key aspects:
+      - Use interfaces and abstract classes
+      - Enable behavior extension without source modification
+      - Support plugin architecture
+      - Related to: Interface-based Design, Extensibility
+
+  - Liskov Substitution Principle (LSP)
+    - Objects of a superclass should be replaceable with objects of subclasses
+    - Key aspects:
+      - Behavioral compatibility
+      - Contract adherence
+      - Type safety
+      - Related to: Inheritance, Polymorphism
+
+  - Interface Segregation Principle (ISP)
+    - Clients should not be forced to depend on interfaces they don't use
+    - Key aspects:
+      - Small, focused interfaces
+      - Role-specific interfaces
+      - Avoid fat interfaces
+      - Related to: API Design, Modularity
+
+  - Dependency Inversion Principle (DIP)
+    - High-level modules should not depend on low-level modules
+    - Key aspects:
+      - Depend on abstractions
+      - Inversion of Control (IoC)
+      - Dependency Injection (DI)
+      - Related to: Loose Coupling, Dependency Management
+  - Common SOLID Violations
+    - God Class: Violation of SRP
+    - Rigid Hierarchy: Violation of OCP
+    - Type Checking: Violation of LSP
+    - Fat Interfaces: Violation of ISP
+    - Tight Coupling: Violation of DIP
+    - Related to: Code Smells, Refactoring
+
+### Code Smells
+- Definition
+  - Indicators of potential problems in code design or implementation
+  - Not necessarily bugs, but opportunities for improvement
+  - Often violate design principles or best practices
+  - Related to: Technical Debt, Refactoring
+
+### Bloaters
+- Long Method
+  - Method that has grown too large and complex
+  - Signs: Many lines, multiple responsibilities, high cyclomatic complexity
+  - Fix: Extract Method, Replace Temp with Query
+  - Related to: Single Responsibility Principle
+
+- Large Class
+  - Class that has taken on too many responsibilities
+  - Signs: Too many fields/methods, low cohesion
+  - Fix: Extract Class, Extract Interface, Extract Subclass
+  - Related to: God Object Anti-pattern
+
+- Primitive Obsession
+  - Overuse of primitive data types for domain concepts
+  - Signs: Many primitive fields, string-based enums
+  - Fix: Replace Data Value with Object, Extract Class
+  - Related to: Value Objects, Domain-Driven Design
+
+- Long Parameter List
+  - Method with excessive parameters
+  - Signs: More than 3-4 parameters
+  - Fix: Introduce Parameter Object, Preserve Whole Object
+  - Related to: Method Design
+
+### Change Preventers
+- Divergent Change
+  - Class that changes for multiple different reasons
+  - Signs: Unrelated modifications in same class
+  - Fix: Extract Class, Move Method
+  - Related to: Single Responsibility Principle
+
+- Shotgun Surgery
+  - Single change requires multiple class modifications
+  - Signs: Changes scattered across codebase
+  - Fix: Move Method, Move Field, Inline Class
+  - Related to: Coupling
+
+- Parallel Inheritance Hierarchies
+  - Creating a subclass in one hierarchy requires subclass in another
+  - Signs: Duplicate inheritance structures
+  - Fix: Move Method, Move Field
+  - Related to: Inheritance
+
+### Couplers
+- Feature Envy
+  - Method more interested in another class's data
+  - Signs: Method uses many methods/data from another class
+  - Fix: Move Method, Extract Method
+  - Related to: Law of Demeter
+
+- Inappropriate Intimacy
+  - Classes that know too much about each other
+  - Signs: Excessive method calls, shared fields
+  - Fix: Move Method, Move Field, Replace Inheritance with Delegation
+  - Related to: Encapsulation
+
+- Message Chains
+  - Series of method calls to navigate object relationships
+  - Signs: Long chains like a.getB().getC().getD()
+  - Fix: Hide Delegate, Extract Method
+  - Related to: Law of Demeter
+
+### Object-Orientation Abusers
+- Switch Statements
+  - Complex conditional logic that tends to be duplicated
+  - Signs: Multiple switch/if based on type
+  - Fix: Replace Conditional with Polymorphism
+  - Related to: Strategy Pattern
+
+- Temporary Field
+  - Class fields used only in certain circumstances
+  - Signs: Fields only used by certain methods
+  - Fix: Extract Class, Introduce Null Object
+  - Related to: Class Design
+
+- Refused Bequest
+  - Subclass uses only some methods/properties of superclass
+  - Signs: Inherited methods throwing exceptions
+  - Fix: Replace Inheritance with Delegation
+  - Related to: Liskov Substitution Principle
+
+### Dispensables
+- Comments
+  - Comments that compensate for bad code
+  - Signs: Comments explaining unclear code
+  - Fix: Extract Method, Rename Method
+  - Related to: Clean Code
+
+- Duplicate Code
+  - Same code structure in multiple places
+  - Signs: Copy-pasted code, similar code patterns
+  - Fix: Extract Method, Pull Up Method, Form Template Method
+  - Related to: DRY Principle
+
+- Data Class
+  - Classes with only fields and crude methods
+  - Signs: No behavior, only getters/setters
+  - Fix: Move Method, Encapsulate Field
+  - Related to: Encapsulation
+
+## Data & Database Concepts
+- Relational Theory
+  - Mathematical theory for data management using relations (tables)
+  - Key concepts:
+    - Relations (Tables): Sets of tuples sharing attributes
+    - Tuples (Rows): Individual data entries
+    - Attributes (Columns): Properties defining data structure
+  - Related to: Database Design, Set Theory
+
+- Relational Operations
+  - Select: Filtering rows based on conditions
+  - Project: Selecting specific columns
+  - Join: Combining relations based on common attributes
+  - Union/Intersection: Set operations on relations
+  - Related to: SQL, Query Optimization
+
+- Database Normalization
+  - Process of organizing data to reduce redundancy
+  - Forms:
+    - 1NF: Atomic values, no repeating groups
+    - 2NF: 1NF + no partial dependencies
+    - 3NF: 2NF + no transitive dependencies
+    - BCNF: 3NF + every determinant is a candidate key
+  - Related to: Data Integrity, Database Design
+
+- Integrity Constraints
+  - Entity Integrity: Primary key constraints
+  - Referential Integrity: Foreign key constraints
+  - Domain Integrity: Valid attribute values
+  - Business Rules: Application-specific constraints
+  - Related to: Data Quality, Database Design
+
+- Transaction Properties (ACID)
+  - Atomicity: All or nothing
+  - Consistency: Valid state transitions
+  - Isolation: Concurrent transaction separation
+  - Durability: Permanent changes
+  - Related to: Transaction Management, Data Consistency
+
+- CAP Theorem
+  - Consistency: All nodes see same data
+  - Availability: Every request receives response
+  - Partition Tolerance: System functions despite network issues
+  - Related to: Distributed Systems, NoSQL
+
+- Data Storage Patterns
+  - Row-oriented: Traditional RDBMS
+  - Column-oriented: Analytics databases
+  - Document-oriented: JSON/XML storage
+  - Key-value: Simple key-based lookup
+  - Graph: Relationship-focused storage
+  - Related to: Database Types, Use Case Optimization
+
+- Query Processing
+  - Query Planning: Optimization strategy
+  - Index Usage: Access path selection
+  - Join Algorithms: Nested loops, hash joins, merge joins
+  - Related to: Performance Optimization, Database Tuning
+
+- Concurrency Control
+  - Locking: Pessimistic concurrency control
+  - MVCC: Optimistic concurrency control
+  - Deadlock Detection: Identifying and resolving conflicts
+  - Related to: Transaction Management, Performance
+
+- Data Integration
+  - ETL: Extract, Transform, Load
+  - ELT: Extract, Load, Transform
+  - Data Warehouse: Integrated data repository
+  - Data Lake: Raw data storage
+  - Related to: Business Intelligence, Analytics
+
+### Data Structuring & Serialization
+
+- Structured Data
+  - Data organized according to predefined models or schemas
+  - Types:
+    - Tables: Row/column format (e.g., CSV, Excel)
+    - Hierarchical: Parent-child relationships (e.g., XML)
+    - Network: Many-to-many relationships (e.g., Graph data)
+  - Related to: Data Modeling, Schema Design
+
+- Data Serialization
+  - Process of converting data structures into format for storage/transmission
+  - Key aspects:
+    - Encoding: Converting to byte streams
+    - Decoding: Reconstructing original data
+    - Schema Evolution: Managing format changes
+  - Related to: Data Integration, APIs
+
+- Common Data Formats
+  - JSON (JavaScript Object Notation)
+    - Lightweight, human-readable
+    - Key-value pairs and arrays
+    - Schema-optional
+    - Common in: Web APIs, Document DBs
+    
+  - XML (eXtensible Markup Language)
+    - Tag-based hierarchical structure
+    - Schema support (XSD)
+    - Namespaces for disambiguation
+    - Common in: SOAP APIs, Config files
+
+  - YAML (YAML Ain't Markup Language)
+    - Human-readable format
+    - Supports references and aliases
+    - Indentation-based structure
+    - Common in: Configuration, Docker
+
+  - Protocol Buffers (Protobuf)
+    - Binary serialization format
+    - Schema-required (proto files)
+    - Language-neutral
+    - Common in: gRPC, High-performance systems
+
+  - Avro
+    - Binary serialization format
+    - Schema evolution support
+    - Dynamic typing
+    - Common in: Hadoop, Big Data
+
+- Schema Definition Languages
+  - JSON Schema
+    - Validates JSON documents
+    - Type checking and constraints
+    - Documentation generation
+    
+  - XSD (XML Schema Definition)
+    - Defines XML structure
+    - Type system and validation
+    - Namespace management
+
+  - OpenAPI/Swagger
+    - REST API definition
+    - Request/response schemas
+    - API documentation
+
+- Data Exchange Patterns
+  - Message Formats
+    - Headers: Metadata and routing info
+    - Payload: Actual data content
+    - Envelope: Wrapping structure
+    
+  - Content Negotiation
+    - Format selection
+    - Version management
+    - Compression options
+
+  - Transformation
+    - Format conversion
+    - Schema mapping
+    - Data validation
+
+## Organizational Anti-patterns
+
+- Project Blindness
+  - The unintended consequences of breeding enterprise IT development from projects with individual goals
+  - Key symptoms:
+    - Local optimization at cost of enterprise benefits
+    - Duplicate functionality across systems
+    - Inconsistent technology choices
+    - Fragmented architecture
+    - Silos of knowledge
+  - Root causes:
+    - Project-based funding models
+    - Short-term success metrics
+    - Lack of enterprise architecture governance
+    - Missing cross-project coordination
+  - Related to: Technical Debt, Enterprise Architecture
+
+- Conway's Law
+  - Systems mirror communication structure of organization
+  - Impact on:
+    - System architecture
+    - Team boundaries
+    - Integration patterns
+  - Related to: Organization Design, System Architecture
+
+- Project-Product Mismatch
+  - Tension between project-based delivery and product-based maintenance
+  - Manifestations:
+    - Handover problems
+    - Maintenance funding gaps
+    - Missing long-term ownership
+  - Related to: Project Blindness, Technical Debt
+
+- Enterprise Technical Debt
+  - Accumulation of suboptimal decisions across projects
+  - Sources:
+    - Project time pressure
+    - Missing enterprise standards
+    - Insufficient architecture governance
+    - Local optimization
+  - Related to: Project Blindness, Architecture Governance
+
+- Scaled Agile
+  - A subversion of SCRUM and AGILE Values designed to remove protection of code developers and instead engage them in meetings with non-technical people.
+  - Related to: Conways Law
+
+- SCRUM
+  - An effort to make up to 5 programmers collaborate on the same project in a self-organizing fashion, but often degrade into pointless standups and eating candy every two weeks.
+    - Can work if you have the luxury of having a SCRUM master with an understanding of development.
+  - Related to: Conways Law
+ 
+- Business Owner
+  - A person put in charge of prioritizing a development teams products, that has neither deep business knowledge nor technical experience.
+  - Related to: Conway Law 
+ 
+- Agile Manifesto
+  - The agile manifesto reads:
+    - We are uncovering better ways of developing software by doing it and helping others do it. Through this work we have come to value:
+      - Individuals and interactions over processes and tools
+      - Working software over comprehensive documentation
+      - Customer collaboration over contract negotiation
+      - Responding to change over following a plan
+  - Related to: Conways Law
 
 ## Common Terms Used in ADRs
-- Technical Debt
-- Coupling/Cohesion
-- Breaking Change (A Semver major version)
-- Semver (Semantic version, major, minor, patch e.g. 1.3.1)
-- Migration Path
+- Unified Modelling Language(UML)
+  - A detailed modelling language containing class diagrams, sequence diagrams etc.  
+- Archimate
+  - A modelling language emphasizing Enterprise Architecture
 - Feature Toggle/Flag
+- RFC 2219
+  - The standard for expressing unambigous iformation about requirements specification.
+    - MUST This word, or the terms "REQUIRED" or "SHALL", mean that the definition is an absolute requirement of the specification.
+    - MUST NOT This phrase, or the phrase "SHALL NOT", mean that the definition is an absolute prohibition of the specification.
+    - SHOULD This word, or the adjective "RECOMMENDED", mean that there may exist valid reasons in particular circumstances to ignore a particular item, but the full implications must be understood and carefully weighed before choosing a different course.
+    - SHOULD NOT   This phrase, or the phrase "NOT RECOMMENDED" mean that there may exist valid reasons in particular circumstances when the particular behavior is acceptable or even useful, but the full implications should be understood and the case carefully weighed before implementing any behavior described with this label.
+    - MAY This word, or the adjective "OPTIONAL", mean that an item is truly optional.
+- Related to: https://datatracker.ietf.org/doc/html/rfc2119
+- YAGNI
+  - 'You Aint Gonna Need It' principle adresses the antipattern of writing placeholders or preparing extensions to codebases with to imminent presence of a need.
