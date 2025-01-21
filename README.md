@@ -3,9 +3,33 @@ Version 0.1
 
 A comprehensive framework for creating, managing, and analyzing Architecture Decision Records (ADRs) across projects and enterprises.
 
+## Table of Contents
+- [Overview](#overview)
+- [Repository Structure](#repository-structure)
+- [Getting Started](#getting-started)
+- [Framework Features](#framework-features)
+- [Usage Guidelines](#usage-guidelines)
+- [Tools](#tools)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
+
 ## Overview
 
 This repository provides a standardized approach to documenting architectural decisions through ADRs. It includes templates, examples, and tools that support both individual project decisions and enterprise-wide architectural governance.
+
+## ADR log
+
+| ADR ID | Title | Status | Valid From Version | Valid To Version |
+|--------|-------|--------|-------------------|------------------|
+| ADR-001| Need for ADR  | Accepted | 1.0.0            | current          |
+| ADR-002| Template structure   | Accepted | 1.0.0            | current       |
+| ADR-003| Metadata fields  | Accepted | 1.0.0            | current       |
+| ADR-004| Impact analysis  | Accepted | 1.0.0            | current       |
+| ADR-005| ADR versioning   | Proposed | 1.0.0            | current       |
+| ADR-006| Enterprise wide   | Accepted | 1.0.0            | current       |
+| ADR-007| Automated enterprise monitoring | Proposed | 1.0.0            | current       |
+
 
 ## Repository Structure
 
