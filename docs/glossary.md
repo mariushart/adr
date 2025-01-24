@@ -12,7 +12,7 @@
 
 - Decision Story
   - Narrative describing the context and reasoning behind an architectural decision
-  - Related to: Context, Rationale
+  - Related to: Context, Rationale, RCDA
 
 ## Architectural Patterns & Concepts
 
@@ -46,6 +46,40 @@
 - Bounded context
   - Basically the ability to group something and use that to abstract other factors out
   - Related to: Domain-Driven Design
+
+- RCDA
+  - Risk- and Cost-Driven Architecture (RCDA) is an architecting approach developed by CGI that focuses on managing risks and costs in solution design. 
+  - Key aspects:
+   - Decision Stories
+   - Risk-first approach to solution design
+   - Cost optimization and management
+   - Scalable methodology
+   - Agile and deadline-oriented
+   - Validated through peer-reviewed research
+   - Recognized by Open Group Certified Architect (OpenCA) program
+  - Related to: Decision Stories
+
+- Decision Stories
+  - Method to document architectural choices in a standardized and transparent way
+   - In the context of: [current situation/project/environment]
+   - Facing concern(s): [list key problems/challenges]
+   - We decided: [chosen solution/approach]
+   - And not: [rejected alternatives]
+   - To achieve: [expected outcomes/benefits]
+   - Accepting: [trade-offs/consequences]
+
+- TOGAF
+  - The Open Group Architecture Framework is an enterprise architecture methodology and framework that helps organizations design, plan, implement, and govern enterprise IT architecture. 
+  - Its core component is the Architecture Development Method (ADM), a repeatable cycle for developing architecture.
+   - Preliminary: Defines how to implement TOGAF within the organization
+   - Architecture Vision: Sets project scope, constraints, and expectations
+   - Business Architecture: Describes current business structure and goals
+   - Information Systems Architecture: Covers data and application architecture
+   - Technology Architecture: Describes software and hardware infrastructure
+   - Opportunities and Solutions: Initial implementation planning
+   - Migration Planning: Cost-benefit analysis and detailed implementation plan
+   - Implementation Governance: Provides architectural oversight
+   - Architecture Change Management: Monitors and manages changes
 
 ## Domain Modeling Concepts
 
@@ -184,22 +218,7 @@
   - Practices of automating building, testing, and deployment
   - Related to: DevOps, Automation
 
-## Architectural Patterns & Concepts
-
-- Event Sourcing
-  - Also known as: Event Store Pattern
-  - Related to: CQRS, Event-Driven Architecture
-  
-- Long-Lived Transactions (LLT)
-  - Also known as: Saga Pattern, Choreography-based Transactions
-  - Related to: Compensating Transactions, Distributed Transactions
-  
-- CQRS (Command Query Responsibility Segregation)
-  - Related to: Event Sourcing, Domain-Driven Design
-  
-- Service Mesh
-  - Also known as: Network Fabric
-  - Related to: Service Discovery, Load Balancing
+## Architectural Frameworks
  
 ### Object-Oriented Analysis and Design (OOAD)
 
@@ -876,17 +895,19 @@
   - Related to: Project Blindness, Architecture Governance
 
 - Scaled Agile
-  - A subversion of SCRUM and AGILE Values designed to remove protection of code developers and instead engage them in meetings with non-technical people.
-  - Related to: Conways Law
+  - An attempt to merge SCRUM and AGILE Values with enterprise wide management.
+    - antipatterns include: ad hoc planning coming at odds with architecture goal architecture, developers being pooled into meetings about immature business goal with non-technical people. As well as waterfall planning witout analysis.
+  - Related to: Conways Law, Agile Manifesto
 
 - SCRUM
-  - An effort to make up to 5 programmers collaborate on the same project in a self-organizing fashion, but often degrade into pointless standups and eating candy every two weeks.
-    - Can work if you have the luxury of having a SCRUM master with an understanding of development.
-  - Related to: Conways Law
+  - An effort to make approximately 5 developers collaborate on the same project in a self-organizing manner
+    - Can work if you have the luxury of having a SCRUM master with an understanding of development that can shield the team from organizational noise and interruptions.
+    - antipatterns include: micromanagement, removal of self-organization, focus on management tooling and non-code-producing activities
+  - Related to: Conways Law, Agile Manifesto
  
 - Business Owner
-  - A person put in charge of prioritizing a development teams products, that has neither deep business knowledge nor technical experience.
-  - Related to: Conway Law 
+  - A person with domain knowledge put in charge of prioritizing a development teams products.
+  - Related to: Conway Law, Agile Manifesto 
  
 - Agile Manifesto
   - The agile manifesto reads:
