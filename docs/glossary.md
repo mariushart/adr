@@ -363,7 +363,7 @@
     - Automated validation
     - Review process
     - Continuous integration
-  - Related to: DevOps
+  - Related to: DevOps, GitOps
 
 - **API Gateway**
   - API management frontend
