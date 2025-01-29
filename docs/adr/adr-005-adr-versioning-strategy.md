@@ -3,7 +3,7 @@
 ## Metadata
 - ID: ADR-005
 - Type: ADR
-- Status: Proposed
+- Status: Accepted
 - Date: 2025-01-20
 - Deciders: Repository Maintainers
 
