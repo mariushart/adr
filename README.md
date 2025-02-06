@@ -26,7 +26,7 @@ This repository provides a standardized approach to documenting architectural de
 | ADR-002| Template structure   | Accepted | 1.0.0            | current       |
 | ADR-003| Metadata fields  | Accepted | 1.0.0            | current       |
 | ADR-004| Impact analysis  | Accepted | 1.0.0            | current       |
-| ADR-005| ADR versioning   | Proposed | 1.0.0            | current       |
+| ADR-005| ADR versioning   | Accepted | 1.0.0            | current       |
 | ADR-006| Enterprise wide   | Accepted | 1.0.0            | current       |
 | ADR-007| Automated enterprise monitoring | Proposed | 1.0.0            | current       |
 
