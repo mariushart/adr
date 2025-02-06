@@ -1,6 +1,6 @@
 # Enterprise Architecture Glossary
 
-## Business Layer
+## Motivation Layer
 ### Strategy & Motivation
 - **RCDA (Risk- and Cost-Driven Architecture)**
   - Architecting approach focusing on managing risks and costs in solution design
@@ -46,6 +46,7 @@
     - Implementation Governance: Architectural oversight
     - Architecture Change Management: Change monitoring
 
+## Business Layer
 ### Process & Organization
 - **Conway's Law**
   - Systems mirror organization's communication structure
