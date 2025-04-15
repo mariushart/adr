@@ -22,16 +22,14 @@
 ## Context
 [Concise description of the forces driving this decision]
 
-## Decision Story
+## Decision
+<!-- P0483 -->
 - In the context of: [Describe the context or background]
 - Facing concern(s): [List the concerns or issues]
 - We decided: [State the decision]
 - And not: [Explain alternatives not chosen]
 - To achieve: [Describe desired outcomes]
 - Accepting: [List trade-offs/compromises]
-
-## Decision
-[Clear, present-tense statement of the architectural decision]
 
 ## Rationale
 - Chosen because:

@@ -13,10 +13,25 @@ A comprehensive framework for creating, managing, and analyzing Architecture Dec
 - [Contributing](#contributing)
 - [License](#license)
 - [Contact](#contact)
+- [ADR Overview](docs/adr/overview.md)
 
 ## Overview
 
 This repository provides a standardized approach to documenting architectural decisions through ADRs. It includes templates, examples, and tools that support both individual project decisions and enterprise-wide architectural governance.
+
+## Visual Dependency Graph
+
+This graph represents the dependencies between the ADRs using Mermaid. Each ADR is represented as a node, and dependencies are represented as directed edges between nodes.
+
+```mermaid
+graph TD
+    ADR-001[Need for ADR] --> ADR-002[Template Structure]
+    ADR-002 --> ADR-003[Metadata Fields]
+    ADR-002 --> ADR-004[Impact Analysis]
+    ADR-001 --> ADR-005[ADR Versioning]
+    ADR-005 --> ADR-006[Enterprise-wide ADR Management]
+    ADR-006 --> ADR-007[Automated EA Monitoring]
+```
 
 ## ADR log
 
@@ -26,7 +41,7 @@ This repository provides a standardized approach to documenting architectural de
 | ADR-002| Template structure   | Accepted | 1.0.0            | current       |
 | ADR-003| Metadata fields  | Accepted | 1.0.0            | current       |
 | ADR-004| Impact analysis  | Accepted | 1.0.0            | current       |
-| ADR-005| ADR versioning   | Proposed | 1.0.0            | current       |
+| ADR-005| ADR versioning   | Accepted | 1.0.0            | current       |
 | ADR-006| Enterprise wide   | Accepted | 1.0.0            | current       |
 | ADR-007| Automated enterprise monitoring | Proposed | 1.0.0            | current       |
 
